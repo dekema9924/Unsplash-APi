@@ -10,14 +10,18 @@
 </head>
 <body>
     <div class="--input">
-        <input type="text" class="--text-input" name="text-input" placeholder="Search...">
+
+       <form action="/apiroutes" method="post">
         <i class="fa-solid fa-magnifying-glass --search-icon"></i> 
+            <input type="text" class="--text-input" name="text" placeholder="Search...">
+            <input type="submit" class="--submit-btn" value="SEARCH">
+       </form>
     </div> 
     <div class="--image-container">
-        <img class="--unsplash-img" src="" alt="">
-        <img class="--unsplash-img" src="" alt="">
-        <img class="--unsplash-img" src="" alt="">
-        <img class="--unsplash-img" src="" alt="">
+        <% data.forEach(datas => {%>
+            <img class="--unsplash-img" src=<%= datas.urls.regular %> alt="">
+
+      <%  }); %>
 
     </div>  
 </body>
