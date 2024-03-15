@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body{
     display: flex;
@@ -10,10 +11,7 @@ body{
     align-items: center;
     
 }
-.--image-container{
-    display: flex;
-    justify-content: center;
-}
+
 
 .--input{
     display: flex;
@@ -21,9 +19,8 @@ body{
 }
 .--search-icon{
     position: absolute;
-    right: 80%;
+    right: 85%;
     top: 47px;
-    color: white;
     justify-content: end;
 
 }
@@ -32,11 +29,12 @@ input[type = text]{
     height: 50px;
     padding-left: 90px;
     font-size: 1.2em;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     border-radius: 5px;
     margin-top: 30px;
     border-style: none;
+    border: 2px solid black;
 }
 .--submit-btn{
     height: 40px;
@@ -67,10 +65,33 @@ form{
     flex-wrap: wrap;
     width: 90vw;
     margin-top: 20px;
+    justify-content: center;
+
 }
 .--unsplash-img{
     width: 160px;
     height: 200px;
     margin: 20px;
 }
+.--likes{
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    right: 100px;
+    top: 40px;
+    background-color: white;
+    border: 2px solid rgb(80, 148, 207);
+
+}
+.--heart{
+    color: red;
+}
+.--unsplash-img:hover{
+    cursor: pointer;
+    border: 2px solid rgb(80, 148, 207);
+
+}
+
+
 

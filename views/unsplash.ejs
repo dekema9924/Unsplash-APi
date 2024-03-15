@@ -19,10 +19,11 @@
     </div> 
     <div class="--image-container">
         <% data.forEach(datas => {%>
-            <img class="--unsplash-img" src=<%= datas.urls.regular %> alt="">
+            <a href=<%= datas.links.html %>><img class="--unsplash-img" src=<%= datas.urls.regular %> alt=""></a>
 
       <%  }); %>
-
-    </div>  
+  </div> 
+  
+ <script src="../public/likes/likes.js"></script> 
 </body>
 </html>
