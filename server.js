@@ -17,7 +17,7 @@ app.use(bodyparser.urlencoded({extended: false}))
 
 
 app.get('/', (req, res)=>{
-    res.render("unsplash.ejs")
+    res.redirect("/apiroutes")
 })
 
 
