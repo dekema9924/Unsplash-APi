@@ -12,10 +12,7 @@ routes.use(bodyParser.urlencoded({extended: false}))
 routes.get('/', async(req, res)=>{
     async function getImages() {
         try {
-          const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=office&client_id=${process.env.API_KEY}`,{
-            headers: {
-              'Authorization': 'Bearer ' + process.env.SECRET_KEY
-            }}
+          const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=office&client_id=${process.env.API_KEY}`
           );
           const data = response.data.results
           res.render('unsplash.ejs', {data: data});
@@ -33,10 +30,7 @@ routes.post('/', async (req, res)=>{
 
   async function getImages() {
     try {
-      const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${search}&client_id=${process.env.API_KEY}`,{
-        headers: {
-          'Authorization': 'Bearer ' + process.env.SECRET_KEY
-        }}
+      const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${search}&client_id=${process.env.API_KEY}`
       );
       const data = response.data.results
       res.render('unsplash.ejs', {data: data});
