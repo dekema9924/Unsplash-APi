@@ -11,17 +11,25 @@ routes.use(bodyParser.urlencoded({extended: false}))
 
 routes.get('/', async(req, res)=>{
     async function getImages() {
+      let url = `https://api.unsplash.com/search/photos?page=1&query=office&client_id=${process.env.API_KEY}`
+      let options = {
+        method: 'GET',
+        url: url,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8'
+        }
+    };
         try {
-          const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=office&client_id=${process.env.API_KEY}`
-          );
+          const response = await axios(options)
           const data = response.data.results
           res.render('unsplash.ejs', {data: data});
 
-        } catch (error) {
+        } catch (error){
           console.error(error);
         }    
-    }
-    getImages();
+  }
+  getImages();
     
 })
 
@@ -29,9 +37,17 @@ routes.post('/', async (req, res)=>{
   const search = req.body.text;
 
   async function getImages() {
-    try {
-      const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${search}&client_id=${process.env.API_KEY}`
-      );
+    let url = `https://api.unsplash.com/search/photos?page=1&query=${search}&client_id=${process.env.API_KEY}`
+    let options = {
+      method: 'GET',
+      url: url,
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8'
+      }
+    };
+    try{
+      const response = await axios(options)
       const data = response.data.results
       res.render('unsplash.ejs', {data: data});
     } catch (error) {
