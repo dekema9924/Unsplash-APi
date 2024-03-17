@@ -14,13 +14,12 @@
        <form action="/apiroutes" method="post" onsubmit="showError()">
         <i class="fa-solid fa-magnifying-glass --search-icon"></i> 
             <input type="text" class="--text-input" name="text" placeholder="Office..." required>
-            <p class="--error-msg">Enter something</p>
             <input type="submit" class="--submit-btn" value="SEARCH">
        </form>
     </div> 
     <div class="--image-container">
         <% data.forEach(datas => {%>
-            <a href=<%= datas.links.html %>><img class="--unsplash-img" src=<%= datas.urls.regular %> alt=""></a>
+            <a href=<%= datas.links.html %>><img class="--unsplash-img" src=<%= datas.urls.regular %> alt="unsplash-img"></a>
 
       <%  }); %>
   </div> 
